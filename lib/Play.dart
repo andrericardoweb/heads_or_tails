@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
+import 'dart:math';
 
-import 'Result.dart';
+import 'package:flutter/material.dart';
+import 'package:heads_or_tails/Result.dart';
+
 
 class Play extends StatefulWidget {
   @override
@@ -10,10 +12,15 @@ class Play extends StatefulWidget {
 class _PlayState extends State<Play> {
 
   void _displayResult(){
+
+    var items = ["heads", "tails"];
+    var number = Random().nextInt(items.length);
+    var result = items[number];
+
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => Result()
+        builder: (context) => Result(result)
       ));
   }
 
