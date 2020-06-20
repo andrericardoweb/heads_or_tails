@@ -1,21 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'Result.dart';
-
-class Play extends StatefulWidget {
+class Result extends StatefulWidget {
   @override
-  _PlayState createState() => _PlayState();
+  _ResultState createState() => _ResultState();
 }
 
-class _PlayState extends State<Play> {
+class _ResultState extends State<Result> {
 
-  void _displayResult(){
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => Result()
-      ));
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +18,17 @@ class _PlayState extends State<Play> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Image.asset("images/logo.png"),
+            Image.asset("images/moeda_cara.png"),
             GestureDetector(
-              onTap: _displayResult,
-              child: Image.asset("images/botao_jogar.png"),
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Image.asset("images/botao_voltar.png"),
             )
           ],
         ),
       ),
     );
+
   }
 }
